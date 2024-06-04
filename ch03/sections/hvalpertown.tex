@@ -1,0 +1,28 @@
+\section{20 nejvyšší cena bytů - rozděleno na města}
+
+\begin{lstlisting}[
+           language=SQL,
+           showspaces=false,
+           basicstyle=\ttfamily,
+           commentstyle=\color{gray},
+           keywordstyle=\color{cyan}
+        ]
+SELECT 
+    td.year, ld.town, MAX(ft.resale_price) 
+        AS highest_resale_price
+FROM 
+    FactTable AS ft
+JOIN 
+    Location_Dimension AS ld ON ft.LocationKey = ld.Index
+JOIN 
+    Time_Dimension AS td ON ft.TimeKey = td.Index
+GROUP BY 
+    td.year, ld.town
+ORDER BY 
+    highest_resale_price
+LIMIT 20;
+\end{lstlisting}
+
+\includegraphics[width=150mm]{hvalpertown-data.png}
+
+\includegraphics[width=150mm]{hvalpertown.png}

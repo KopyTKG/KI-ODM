@@ -35,12 +35,14 @@
 \setlength{\parskip}{0.3em}
 
 % Customizing chapters to have a specific look
-\titleformat{\chapter}
-  {\normalfont\huge\bfseries}{\thechapter.}{1em}{}
+\titleformat{\chapter}[block]
+  {\normalfont\huge\bfseries}{\thechapter.}{1cm}{}
+\titlespacing{\chapter}{0cm}{2mm}{3mm}
 
 % Customizing sections similarly
 \titleformat{\section}
-  {\normalfont\Large\bfseries}{\thesection}{1em}{}
+  {\normalfont\Large\bfseries}{\thesection}{1cm}{}
+\titlespacing{\section}{0cm}{2mm}{3mm}
 
 \makeatletter
 \newcommand\openright{\cleardoublepage}

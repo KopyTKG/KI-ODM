@@ -1,0 +1,26 @@
+\section{Průměrná cena bytů - na časové ose}
+
+\begin{lstlisting}[
+           language=SQL,
+           showspaces=false,
+           basicstyle=\ttfamily,
+           commentstyle=\color{gray},
+           keywordstyle=\color{cyan}
+        ]
+SELECT 
+    Time_Dimension.year, sum(FactTable.resale_price) 
+        as total_price 
+FROM 
+    FactTable 
+JOIN 
+    Time_Dimension ON 
+        FactTable.TimeKey = Time_Dimension.Index 
+GROUP BY 
+    Time_Dimension.year 
+ORDER BY 
+    Time_Dimension.year;
+\end{lstlisting}
+
+\includegraphics[width=150mm]{pricesumperyear-data.png}
+
+\includegraphics[width=150mm]{pricesumperyear.png}

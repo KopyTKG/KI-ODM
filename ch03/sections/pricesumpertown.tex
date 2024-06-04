@@ -1,0 +1,22 @@
+\section{20 nejvyšší cena bytů - rozděleno na města}
+
+\begin{lstlisting}[
+           language=SQL,
+           showspaces=false,
+           basicstyle=\ttfamily,
+           commentstyle=\color{gray},
+           keywordstyle=\color{cyan}
+        ]
+SELECT 
+    l.town, AVG(f.resale_price) AS average_resale_price 
+FROM 
+    FactTable AS f 
+JOIN 
+    Location_Dimension AS l ON f.LocationKey = l.Index 
+GROUP BY 
+    l.town;
+\end{lstlisting}
+
+\includegraphics[width=150mm]{pricesumpertown-data.png}
+
+\includegraphics[width=150mm]{pricesumpertown.png}
