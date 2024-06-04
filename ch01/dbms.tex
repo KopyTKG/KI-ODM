@@ -1,2 +1,21 @@
 \chapter{Výběr vhodného DBMS}
 Na návrh ostatních kolegů jsem si vybral ClickHouse. Při srovnání různých databázových systémů jsem dospěl k názoru, že výběr správného DBMS pro moje potřeby není zásadně důležitý. ClickHouse mi však umožnil úspěšně zvládnout téměr všechny zadané úkoly. Jediný úkol který jsem nebyl schopen udělat bylo udělání data miningu nad daty.
+
+\section{Instalace}
+ClickHouse lze hostovat přímo na uživatelově zařízení, což je podrobně popsáno v oficiální dokumentaci ClickHouse. Bohužel instalace na osobní zařízení neobsahuje grafické rozhraní tak jsem se rozhodl pro použití alternativy v podobě cloudového řešení přímo na stránkách ClickHouse.
+
+\section{Volba datasetu}
+Jako dataset jsem zvolil data ohledně cen bytů v oblasti Singaporů, které pocházejí z let 2012 až 2023. Datase obsahuje záznamy o jednotlivých bytech a to sice 
+-
+\begin{enumerate}
+    \item MONTH - Rok a měšíc zápisu
+    \item TOWN - Název města
+    \item FLAT\_TYPE - Velikost bytu (2 ROOM, 3 ROOM, 4 ROOM atd.)
+    \item BLOCK - Čtvrť
+    \item STREET\_NAME - Název ulice
+    \item STOREY\_RANGE - Patra na kterých se byt nachází 
+    \item FLOOR\_AREA\_SQM - Rozloha bytu
+    \item FLAT\_MODEL - Typ či kategorie bytu (Imporved, New Generation atd.)
+    \item LEASE\_COMMENCE\_DATE - Datum počátku nájmu
+    \item REMAINING\_LEASE - Čas do konce nájmu (nekonzistentní mezi soubory)
+\end{enumerate}
